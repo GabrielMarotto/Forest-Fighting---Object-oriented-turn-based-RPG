@@ -109,24 +109,3 @@ def get_item(self):
         time.sleep(0.5)
         self.agility += 3
 	
-
-#===============================#
-#Método fora do while
-
-def initial_item(self):
-    if (Player.agility > 0):
-        initial_item_rogue = random.randint(1,3)
-        if (initial_item_rogue == 1):
-            Player.weapon == dagger
-        elif (initial_item_rogue == 2):
-            Player.weapon == longbow
-        elif (initial_item_rogue == 3):
-            Player.weapon == longsword
-    elif (Player.strength > 0):
-        initial_item_figther = random.randint(1,3)
-        if (initial_item_figther == 1):
-            Player.weapon == small_axe
-        elif (initial_item_figther == 2):
-            Player.weapon == javelin
-        elif (initial_item_figther == 3):
-            Player.weapon = battleaxe
