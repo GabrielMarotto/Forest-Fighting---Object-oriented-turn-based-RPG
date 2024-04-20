@@ -7,12 +7,10 @@ from Weapons import Weapon,battleaxe,small_axe,javelin,longbow,longsword,dagger,
 class Player:
     def __init__(self,
                 name:str,
-                weapon,
                 health: int) -> None:
     
         self.name = name
         self.health = health
-        self.weapon = weapon
         self.agility = 0 # Depois cada classe de personagem vai ganhar uma agilidade e força diferentes. Daí cada arma vai usar agilidade ou força pra dar dano.
         self.strength = 0
 
@@ -51,7 +49,7 @@ class Player:
         pass
 
     def initial_item(self):
-        if (self.agility > 0):
+        if (self.__class__ == Rogue):
             initial_item_rogue = random.randint(1,3)
             if (initial_item_rogue == 1):
                 self.weapon == dagger
@@ -59,7 +57,7 @@ class Player:
                 self.weapon == longbow
             elif (initial_item_rogue == 3):
                 self.weapon == longsword
-        elif (self.strength > 0):
+        if (self.__class__ == Fighter):
             initial_item_figther = random.randint(1,3)
             if (initial_item_figther == 1):
                 self.weapon == small_axe
@@ -72,24 +70,22 @@ class Player:
 class Rogue(Player):
     def __init__(self,
                 name:str,
-                weapon,
                 health:int):
 
         self.agility = 1
         self.strength = 0
         self.name = name
+        self.weapon = melee
         self.health = health
-        self.weapon = weapon
 
 class Fighter(Player):
     def __init__(self,
                 name:str,
-                weapon,
                 health:int):
 
         self.agility = 0
         self.strength = 1
         self.name = name
         self.health = health
-        self.weapon = weapon
+        self.weapon = melee
         
