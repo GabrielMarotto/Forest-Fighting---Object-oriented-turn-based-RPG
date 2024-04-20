@@ -1,8 +1,7 @@
 import random
 from Weapons import Weapon,battleaxe,small_axe,javelin,longbow,longsword,dagger,melee
 
-# NOTAS
-# sistema para player com maior agilidade ir primeiro
+
 
 class Player:
     def __init__(self,
@@ -11,7 +10,7 @@ class Player:
     
         self.name = name
         self.health = health
-        self.agility = 0 # Depois cada classe de personagem vai ganhar uma agilidade e força diferentes. Daí cada arma vai usar agilidade ou força pra dar dano.
+        self.agility = 0
         self.strength = 0
 
     def weapon_attack(self, target):
