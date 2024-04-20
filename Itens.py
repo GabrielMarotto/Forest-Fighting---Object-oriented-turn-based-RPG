@@ -113,7 +113,7 @@ def get_item(self):
 #===============================#
 #Método fora do while
 
-def initial_item():
+def initial_item(self):
     if (Player.agility > 0):
         initial_item_rogue = random.randint(1,3)
         if (initial_item_rogue == 1):

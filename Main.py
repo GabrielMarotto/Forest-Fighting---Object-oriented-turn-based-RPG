@@ -22,5 +22,5 @@ if (escolha_p2 == "1" or escolha_p2 == "ladino"):
 elif (escolha_p2 == "2" or escolha_p2 == "guerreiro"):
     Player2 = Fighter("Guerreiro",melee,100)
 
-print(Player1.weapon.name)
-print(Player2.health)
+Player1.initial_item()
+Player2.initial_item()

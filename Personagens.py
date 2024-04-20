@@ -53,20 +53,20 @@ class Player:
     def initial_item(self):
         if (self.agility > 0):
             initial_item_rogue = random.randint(1,3)
-        if (initial_item_rogue == 1):
-            self.weapon == dagger
-        elif (initial_item_rogue == 2):
-            self.weapon == longbow
-        elif (initial_item_rogue == 3):
-            self.weapon == longsword
+            if (initial_item_rogue == 1):
+                self.weapon == dagger
+            elif (initial_item_rogue == 2):
+                self.weapon == longbow
+            elif (initial_item_rogue == 3):
+                self.weapon == longsword
         elif (self.strength > 0):
             initial_item_figther = random.randint(1,3)
-        if (initial_item_figther == 1):
-            self.weapon == small_axe
-        elif (initial_item_figther == 2):
-            self.weapon == javelin
-        elif (initial_item_figther == 3):
-            self.weapon = battleaxe
+            if (initial_item_figther == 1):
+                self.weapon == small_axe
+            elif (initial_item_figther == 2):
+                self.weapon == javelin
+            elif (initial_item_figther == 3):
+                self.weapon = battleaxe
 
 
 class Rogue(Player):
