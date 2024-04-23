@@ -6,6 +6,13 @@ from Weapons import javelin,small_axe, battleaxe, longbow, longsword, dagger, me
 # Menu principal pré-while, ainda vou fazer uns gráficos dentro do terminal mas por enquanto to deixando assim.
 
 print("Bem-vindo ao Forest Fighting!")
+# print("Você se encontra no meio da Floresta dos Elfos Selvagens, com um inimigo a sua frente.")
+# time.sleep(1)
+# print("A floresta contém tudo o que você precisa para a vitória...")
+# time.sleep(1)
+# print("se a sorte estiver do seu lado.")
+
+
 escolha_p1 = input("\n Jogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n\n----->")
 escolha_p2 = input("\n Jogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n\n----->")
 
@@ -18,7 +25,7 @@ elif (escolha_p1 == "2" or escolha_p1 == "guerreiro"):
     Player1 = Fighter("Guerreiro",100)
 
 Player1.initial_item()
-print(f"O {Player1.name} vasculha a floresta por uma arma, e acha...")
+print(f"O Jogador 1 vasculha a floresta por uma arma, e acha...")
 # #time.sleep(1)
 # print('.')
 # #time.sleep(1)
@@ -35,7 +42,7 @@ elif (escolha_p2 == "2" or escolha_p2 == "guerreiro"):
     Player2 = Fighter("Guerreiro",100)
 
 Player2.initial_item()
-print(f"O {Player2.name} vasculha a floresta por uma arma, e acha...")
+print(f"O Jogador 2 vasculha a floresta por uma arma, e acha...")
 # time.sleep(1)
 # print('.')
 # time.sleep(1)
