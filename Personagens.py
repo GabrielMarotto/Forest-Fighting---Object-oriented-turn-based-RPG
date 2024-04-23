@@ -51,17 +51,17 @@ class Player:
         if (self.__class__ == Rogue):
             initial_item_rogue = random.randint(1,3)
             if (initial_item_rogue == 1):
-                self.weapon == dagger
+                 self.weapon = dagger
             elif (initial_item_rogue == 2):
-                self.weapon == longbow
+                 self.weapon = longbow
             elif (initial_item_rogue == 3):
-                self.weapon == longsword
+                 self.weapon = longsword
         if (self.__class__ == Fighter):
             initial_item_figther = random.randint(1,3)
             if (initial_item_figther == 1):
-                self.weapon == small_axe
+                 self.weapon = small_axe
             elif (initial_item_figther == 2):
-                self.weapon == javelin
+                 self.weapon = javelin
             elif (initial_item_figther == 3):
                 self.weapon = battleaxe
 
@@ -87,4 +87,3 @@ class Fighter(Player):
         self.name = name
         self.health = health
         self.weapon = melee
-        
