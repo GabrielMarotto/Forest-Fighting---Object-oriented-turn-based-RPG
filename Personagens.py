@@ -1,6 +1,6 @@
 import random
 from Weapons import Weapon,battleaxe,small_axe,javelin,longbow,longsword,dagger,melee
-
+from BarraVida import HealthBar
 
 
 class Player:
@@ -9,9 +9,11 @@ class Player:
                 health: int) -> None:
     
         self.name = name
-        self.health = health
+        self.health = health #vida atual
+        self.max_health = health #vida atual
         self.agility = 0
         self.strength = 0
+        self.health_bar = HealthBar(self, color="green")
 
     def weapon_attack(self, target):
         
@@ -42,6 +44,7 @@ class Player:
         elif (self.weapon == melee):
             target.health = target.health - 1 - self.strength
 
+        target.health_bar.update()
         
     
     def add_luck():
@@ -53,11 +56,12 @@ class Player:
             if (initial_item_rogue == 1):
                  self.weapon = dagger
             elif (initial_item_rogue == 2):
-                 self.weapon = longbow
+                 self.weapon = longbow    
             elif (initial_item_rogue == 3):
                  self.weapon = longsword
+
         if (self.__class__ == Fighter):
-            initial_item_figther = random.randint(1,3)
+            initial_item_figther = random.randint(1,3)      
             if (initial_item_figther == 1):
                  self.weapon = small_axe
             elif (initial_item_figther == 2):
@@ -76,6 +80,8 @@ class Rogue(Player):
         self.name = name
         self.weapon = melee
         self.health = health
+        self.max_health = health
+        self.health_bar = HealthBar(self, color="blue")
 
 class Fighter(Player):
     def __init__(self,
@@ -86,4 +92,6 @@ class Fighter(Player):
         self.strength = 1
         self.name = name
         self.health = health
+        self.max_health = health
         self.weapon = melee
+        self.health_bar = HealthBar(self, color="green")
