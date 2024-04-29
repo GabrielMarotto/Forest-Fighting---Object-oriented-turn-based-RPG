@@ -10,12 +10,12 @@ class Weapon:
 
 
 
-battleaxe = Weapon('Battleaxe','strength')
-small_axe = Weapon('Small axe','strength')
-javelin = Weapon('Javelin','strength')
+battleaxe = Weapon('Machado de batalha','strength')
+small_axe = Weapon('Machado pequeno','strength')
+javelin = Weapon('Lança','strength')
 
-longbow = Weapon('Longbow','agility') 
-dagger = Weapon('Dagger','agility')
-longsword = Weapon('Longsword','agility')
+longbow = Weapon('Arco longo','agility') 
+dagger = Weapon('Adaga','agility')
+longsword = Weapon('Espada longa','agility')
 
-melee = Weapon('Melee','strength')
+melee = Weapon('Punhos','strength')
