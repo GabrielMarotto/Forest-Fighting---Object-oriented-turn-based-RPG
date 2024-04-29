@@ -3,7 +3,7 @@ import time
 from Personagens import Player,Rogue, Fighter
 from Weapons import javelin,small_axe, battleaxe, longbow, longsword, dagger, melee
 from lib import *
-from BarraVida import *
+from BarraVida import HealthBar
 
 # Menu principal pré-while, ainda vou fazer uns gráficos dentro do terminal mas por enquanto to deixando assim.
 
@@ -71,7 +71,22 @@ cabecalho("O CONFRONTO COMEÇA, ATÉ A MORTE!")
 
 while (Player1.health > 0 and Player2.health > 0):
     cabecalho("JOGADOR 1")
-    escolha = int(input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->"))
+    escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+    
     if (escolha == "1"):
         Player1.weapon_attack(Player2)
         Player2.health_bar.draw()
+
+    elif (escolha == "2"):
+        Player1.add_luck()
+    
+    print("-"*42)
+    cabecalho("JOGADOR 2")
+    escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+
+    if (escolha == "1"):
+        Player2.weapon_attack(Player1)
+        Player1.health_bar.draw()
+
+    elif (escolha == "2"):
+        Player2.add_luck()
