@@ -12,7 +12,7 @@ def add_luck():
     sorte=0
     aleatorio = random.randint(0,100)
     sorte  = aleatorio + sorte
-    if (sorte > 600000000):
+    if (sorte > 60):
         get_item()
     else:
         print("Você vasculha a floresta e acha...")
