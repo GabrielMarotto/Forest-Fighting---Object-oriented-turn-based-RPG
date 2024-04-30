@@ -20,26 +20,32 @@ class Player:
         
         if (self.weapon == battleaxe):
             dice_roll = random.randint(1,12)
+            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == small_axe):
             dice_roll = random.randint(1,4)
+            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == javelin):
             dice_roll = random.randint(1,6)
+            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == longbow):
             dice_roll = random.randint(1,6)
+            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
 
         elif (self.weapon == dagger):
             dice_roll = random.randint(1,4)
+            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
 
         elif (self.weapon == longsword):
             dice_roll = random.randint(1,12)
+            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
 
         elif (self.weapon == melee):
@@ -97,7 +103,7 @@ class Player:
             time.sleep(1)
             print('.')
             time.sleep(2)
-            print('Um Talismã do Ladrão Trombadinha! Sua força agilidade aumenta em 1.')
+            print('Um Talismã do Ladrão Trombadinha! Sua agilidade aumenta em 1.')
             time.sleep(0.5)
             self.agility += 1
 
@@ -110,7 +116,7 @@ class Player:
             time.sleep(1)
             print('.')
             time.sleep(2)
-            print('Um Talismã do Ladrão Profissional! Sua força agilidade aumenta em 2.')
+            print('Um Talismã do Ladrão Profissional! Sua agilidade aumenta em 2.')
             time.sleep(0.5)
             self.agility += 2
 
@@ -123,16 +129,10 @@ class Player:
             time.sleep(1)
             print('.')
             time.sleep(2)
-            print('Um Talismã do Ladrão Especialista! Sua força agilidade aumenta em 3.')
+            print('Um Talismã do Ladrão Especialista! Sua agilidade aumenta em 3.')
             time.sleep(0.5)
             self.agility += 3
 
-    def add_luck(self):
-        sorte=0
-        aleatorio = random.randint(0,100)
-        sorte  = aleatorio + sorte
-        if (sorte > 60):
-            self.get_item()
         else:
             print("Você vasculha a floresta e acha...")
             time.sleep(1)

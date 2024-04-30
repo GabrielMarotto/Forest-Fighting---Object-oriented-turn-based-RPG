@@ -25,13 +25,13 @@ print("se a sorte estiver do seu lado.")
 # time.sleep(2)
 
 
-print("-"*42)
+print(linha())
 escolha_p1 = input("\n Jogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n\n----->")
 escolha_p2 = input("\n Jogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n\n----->")
 
 escolha_p1 = escolha_p1.lower()
 escolha_p2 = escolha_p2.lower()
-print("-"*42)
+print(linha())
 
 if (escolha_p1 == "1" or escolha_p1 == "ladino"):
     Player1 = Rogue("Jogador 1",100)
@@ -70,7 +70,13 @@ print(f'Um(a) {Player2.weapon.name}!')
 cabecalho("O CONFRONTO COMEÇA, ATÉ A MORTE!")
 
 while (Player1.health > 0 and Player2.health > 0):
+    
     cabecalho("JOGADOR 1")
+    print(linha())
+    print(f"ARMA:{Player1.weapon.name} | ATRIBUTO PRINCIPAL:{Player1.strength if Player1.strength > Player1.agility else Player1.agility}".center(48))
+    print(linha())
+
+
     escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
     
     if (escolha == "1"):
@@ -78,10 +84,14 @@ while (Player1.health > 0 and Player2.health > 0):
         Player2.health_bar.draw()
 
     elif (escolha == "2"):
-        Player1.add_luck()
+        Player1.get_item()
     
-    print("-"*42)
+
     cabecalho("JOGADOR 2")
+    print(linha())
+    print(f"ARMA:{Player2.weapon.name} | ATRIBUTO PRINCIPAL:{Player2.strength if Player2.strength > Player2.agility else Player2.agility}".center(48))
+    print(linha())
+
     escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
 
     if (escolha == "1"):
@@ -89,4 +99,4 @@ while (Player1.health > 0 and Player2.health > 0):
         Player1.health_bar.draw()
 
     elif (escolha == "2"):
-        Player2.add_luck()
+        Player2.get_item()
