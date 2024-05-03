@@ -27,19 +27,22 @@ print("se a sorte estiver do seu lado.")
 
 print(linha())
 escolha_p1 = input("\n Jogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n\n----->")
+nome_p1 = input("Jogador 1, qual seu nome? ")
+time.sleep(1)
 escolha_p2 = input("\n Jogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n\n----->")
+nome_p2 = input("Jogador 2, qual seu nome? ")
 
 escolha_p1 = escolha_p1.lower()
 escolha_p2 = escolha_p2.lower()
 print(linha())
 
 if (escolha_p1 == "1" or escolha_p1 == "ladino"):
-    Player1 = Rogue("Jogador 1",100)
+    Player1 = Rogue(nome_p1,50)
 elif (escolha_p1 == "2" or escolha_p1 == "guerreiro"):
-    Player1 = Fighter("Jogador 1",100)
+    Player1 = Fighter(nome_p1,50)
 
 Player1.initial_item()
-print(f"O Jogador 1 vasculha a floresta por uma arma, e acha...")
+print(f"{nome_p1} vasculha a floresta por uma arma, e acha...")
 # time.sleep(1)
 # print('.')
 # time.sleep(1)
@@ -51,12 +54,12 @@ print(f'Um(a) {Player1.weapon.name}!')
 # time.sleep(0.5)
 
 if (escolha_p2 == "1" or escolha_p2 == "ladino"):
-    Player2 = Rogue("Jogador 2",100)
+    Player2 = Rogue(nome_p2,50)
 elif (escolha_p2 == "2" or escolha_p2 == "guerreiro"):
-    Player2 = Fighter("Jogador 2",100)
+    Player2 = Fighter(nome_p2,50)
 
 Player2.initial_item()
-print(f"O Jogador 2 vasculha a floresta por uma arma, e acha...")
+print(f" {nome_p2} vasculha a floresta por uma arma, e acha...")
 # time.sleep(1)
 # print('.')
 # time.sleep(1)
@@ -71,7 +74,8 @@ cabecalho("O CONFRONTO COMEÇA, ATÉ A MORTE!")
 
 while (Player1.health > 0 and Player2.health > 0):
     
-    cabecalho("JOGADOR 1")
+    print(linha())
+    print(f"JOGADOR 1 ({nome_p1})".center(48))
     print(linha())
     print(f"ARMA:{Player1.weapon.name} | ATRIBUTO PRINCIPAL:{Player1.strength if Player1.strength > Player1.agility else Player1.agility}".center(48))
     print(linha())
@@ -87,7 +91,8 @@ while (Player1.health > 0 and Player2.health > 0):
         Player1.get_item()
     
 
-    cabecalho("JOGADOR 2")
+    print(linha())
+    print(f"JOGADOR 2 ({nome_p2})".center(48))
     print(linha())
     print(f"ARMA:{Player2.weapon.name} | ATRIBUTO PRINCIPAL:{Player2.strength if Player2.strength > Player2.agility else Player2.agility}".center(48))
     print(linha())
