@@ -89,7 +89,7 @@ while (Player1.health > 0 and Player2.health > 0):
     print(linha())
     print(f"JOGADOR 1 ({nome_p1})".center(48))
     print(linha())
-    print(f"ARMA:{Player1.weapon.name} | ATRIBUTO PRINCIPAL:{Player1.strength if Player1.strength> Player1.agility else Player1.wisdom if Player1.wisdom > Player1.agility else Player1.intelligence if Player1.intelligence > Player1.agility else Player1.agility}".center(48))
+    print(f"ARMA:{Player1.weapon.name} ({Player1.weapon.tier}) | ATRIBUTO PRINCIPAL:{Player1.strength if Player1.strength> Player1.agility else Player1.wisdom if Player1.wisdom > Player1.agility else Player1.intelligence if Player1.intelligence > Player1.agility else Player1.agility}".center(48))
     print(linha())
 
 
@@ -106,7 +106,7 @@ while (Player1.health > 0 and Player2.health > 0):
     print(linha())
     print(f"JOGADOR 2 ({nome_p2})".center(48))
     print(linha())
-    print(f"ARMA:{Player2.weapon.name} | ATRIBUTO PRINCIPAL:{str(Player2.strength if Player2.strength> Player2.agility else Player2.wisdom if Player2.wisdom > Player2.agility else Player2.intelligence if Player2.intelligence > Player2.agility else Player2.agility)}".center(48))
+    print(f"ARMA:{Player2.weapon.name} ({Player2.weapon.tier}) | ATRIBUTO PRINCIPAL:{str(Player2.strength if Player2.strength> Player2.agility else Player2.wisdom if Player2.wisdom > Player2.agility else Player2.intelligence if Player2.intelligence > Player2.agility else Player2.agility)}".center(48))
     print(linha())
 
     escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")

@@ -86,84 +86,168 @@ class Player:
         target.health_bar.update()
         
     def get_item(self):
-        tabela_inwhile = random.randint(0,75)
-        if (tabela_inwhile >=1 and tabela_inwhile <=10):
-            print("Você vasculha a floresta e acha...")
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(2)
-            print('Um Talismã do Luchador Novato! Sua força aumenta em 1.')
-            time.sleep(0.5)
-            self.strength += 1 
-    
-        elif (tabela_inwhile >=11 and tabela_inwhile <=15):
-            print("Você vasculha a floresta e acha...")
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(2)
-            print('Um Talismã do Luchador Profissional! Sua força aumenta em 2.')
-            time.sleep(0.5)
-            self.strength += 2
+        tabela_inwhile = random.randint(0,40)
+        if(self.__class__ == Fighter):
+            if (tabela_inwhile >=1 and tabela_inwhile <=10):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do marombeiro frango! Sua força aumenta em 3.')
+                time.sleep(0.5)
+                self.strength += 3 
+        
+            elif (tabela_inwhile >=11 and tabela_inwhile <=15):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do rato de academia! Sua força aumenta em 5.')
+                time.sleep(0.5)
+                self.strength += 5
 
-        elif (tabela_inwhile >=16 and tabela_inwhile <=18):
-            print("Você vasculha a floresta e acha...")
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(2)
-            print('Um Talismã do Luchador Supremo! Sua força aumenta em 3.')
-            time.sleep(0.5)
-            self.strength += 3
+            elif (tabela_inwhile >=16 and tabela_inwhile <=20):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do Mister Olympia! Sua força aumenta em 8.')
+                time.sleep(0.5)
+                self.strength += 8
 
-        elif (tabela_inwhile >=20 and tabela_inwhile <=30):
-            print("Você vasculha a floresta e acha...")
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(2)
-            print('Um Talismã do Ladrão Trombadinha! Sua agilidade aumenta em 1.')
-            time.sleep(0.5)
-            self.agility += 1
+        if(self.__class__ == Rogue):
+            if (tabela_inwhile >=1 and tabela_inwhile <=10):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do red bull! Sua agilidade aumenta em 3.')
+                time.sleep(0.5)
+                self.agility += 3 
+        
+            elif (tabela_inwhile >=11 and tabela_inwhile <=15):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do gato laranja! Sua agilidade aumenta em 5.')
+                time.sleep(0.5)
+                self.agility += 5
 
-        elif (tabela_inwhile >=31 and tabela_inwhile <=35):
-            print("Você vasculha a floresta e acha...")
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(2)
-            print('Um Talismã do Ladrão Profissional! Sua agilidade aumenta em 2.')
-            time.sleep(0.5)
-            self.agility += 2
+            elif (tabela_inwhile >=16 and tabela_inwhile <=20):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do universitário fim de semestre! Sua agilidade aumenta em 8.')
+                time.sleep(0.5)
+                self.agility += 8
 
-        elif (tabela_inwhile >=36 and tabela_inwhile <=38):
-            print("Você vasculha a floresta e acha...")
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(2)
-            print('Um Talismã do Ladrão Especialista! Sua agilidade aumenta em 3.')
-            time.sleep(0.5)
-            self.agility += 3
+        if(self.__class__ == Wizard):
+            if (tabela_inwhile >=1 and tabela_inwhile <=10):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do auto-didata! Sua inteligência aumenta em 3.')
+                time.sleep(0.5)
+                self.agility += 3 
+        
+            elif (tabela_inwhile >=11 and tabela_inwhile <=15):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do jogador de DoTa! Sua inteligência aumenta em 5.')
+                time.sleep(0.5)
+                self.intelligence += 5
+
+            elif (tabela_inwhile >=16 and tabela_inwhile <=20):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do jogador de Valorant! Sua inteligência aumenta em 8.')
+                time.sleep(0.5)
+                self.intelligence += 8
+
+        if(self.__class__ == Bard):
+            if (tabela_inwhile >=1 and tabela_inwhile <=10):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do aprendiz! Sua sabedoria aumenta em 3.')
+                time.sleep(0.5)
+                self.wisdom += 3 
+        
+            elif (tabela_inwhile >=11 and tabela_inwhile <=15):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do multi-instrumentalista! Sua sabedoria aumenta em 5.')
+                time.sleep(0.5)
+                self.wisdom += 5
+
+            elif (tabela_inwhile >=16 and tabela_inwhile <=20):
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Um Talismã do virtuoso! Sua sabedoria aumenta em 8.')
+                time.sleep(0.5)
+                self.wisdom += 8
+
+        
 
         else:
             print("Você vasculha a floresta e acha...")
