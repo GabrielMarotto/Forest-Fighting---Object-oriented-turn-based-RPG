@@ -1,6 +1,6 @@
 import random
 import time
-from Weapons import Weapon,battleaxe,small_axe,javelin,longbow,longsword,dagger,melee
+from Weapons import *
 from BarraVida import HealthBar
 
 
@@ -22,33 +22,63 @@ class Player:
         
         if (self.weapon == battleaxe):
             dice_roll = random.randint(1,12)
-            print(f"\nVocê ataca com {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")
+            print(f"\nVocê ataca com {self.weapon.name}, causando {dice_roll + self.strength} de dano ao inimigo.")
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == small_axe):
             dice_roll = random.randint(1,4)
-            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.strength} de dano ao inimigo.")
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == javelin):
             dice_roll = random.randint(1,6)
-            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")            
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.strength} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == longbow):
             dice_roll = random.randint(1,6)
-            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
 
         elif (self.weapon == dagger):
             dice_roll = random.randint(1,4)
-            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
 
         elif (self.weapon == longsword):
             dice_roll = random.randint(1,12)
-            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
+
+        elif (self.weapon == arcane_spark):
+            dice_roll = random.randint(1,4)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.intelligence} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.intelligence
+
+        elif (self.weapon == lightning_bolt):
+            dice_roll = random.randint(1,6)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.intelligence} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.intelligence
+
+        elif (self.weapon == fireball):
+            dice_roll = random.randint(1,12)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.intelligence} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.intelligence
+
+        elif (self.weapon == maracas):
+            dice_roll = random.randint(1,4)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.wisdom} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.wisdom
+
+        elif (self.weapon == viola):
+            dice_roll = random.randint(1,6)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.wisdom} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.wisdom
+
+        elif (self.weapon == drums):
+            dice_roll = random.randint(1,12)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.wisdom} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.wisdom
 
         elif (self.weapon == melee):
             target.health = target.health - 1 - self.strength

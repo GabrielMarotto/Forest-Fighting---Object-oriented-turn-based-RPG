@@ -24,11 +24,11 @@ longsword = Weapon('Espada longa','agility','Tier 3')
 #Wizard
 arcane_spark = Weapon('Faísca arcana','intelligence','Tier 1')
 lightning_bolt = Weapon('Raio de Eletricidade','intelligence','Tier 2')
-Fireball = Weapon('Bola de fogo', 'intelligence', 'Tier 3')
+fireball = Weapon('Bola de fogo', 'intelligence', 'Tier 3')
 
 #Bard
-Maracas = Weapon('Maracas','wisdom','Tier 1')
-Viola = Weapon('Viola', 'wisdom', 'Tier 2')
-Bateria = Weapon('Bateria','wisdom', 'Tier 3')
+maracas = Weapon('Maracas','wisdom','Tier 1')
+viola = Weapon('Viola', 'wisdom', 'Tier 2')
+drums = Weapon('Bateria','wisdom', 'Tier 3')
 
 melee = Weapon('Punhos','strength')
