@@ -12,40 +12,42 @@ class Player:
         self.name = name
         self.health = health #vida atual
         self.max_health = health #vida atual
-        self.agility = 0
-        self.strength = 0
+        self.agility =  0 #Atributo Rogue
+        self.strength = 0 #Atributo Fighter
+        self.intelligence = 0 #Atributo Mago
+        self.wisdom = 0 #Atributo Bardo
         self.health_bar = HealthBar(self, color="green")
 
     def weapon_attack(self, target):
         
         if (self.weapon == battleaxe):
             dice_roll = random.randint(1,12)
-            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")
+            print(f"\nVocê ataca com {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == small_axe):
             dice_roll = random.randint(1,4)
-            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == javelin):
             dice_roll = random.randint(1,6)
-            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")            
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.strength} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.strength
 
         elif (self.weapon == longbow):
             dice_roll = random.randint(1,6)
-            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
 
         elif (self.weapon == dagger):
             dice_roll = random.randint(1,4)
-            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
 
         elif (self.weapon == longsword):
             dice_roll = random.randint(1,12)
-            print(f"\nVocê brandeia seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {target.health - dice_roll - self.agility} de dano ao inimigo.")            
             target.health = target.health - dice_roll - self.agility
 
         elif (self.weapon == melee):
@@ -172,6 +174,8 @@ class Rogue(Player):
 
         self.agility = 1
         self.strength = 0
+        self.intelligence = 0
+        self.wisdom = 0
         self.name = name
         self.weapon = melee
         self.health = health
@@ -185,8 +189,40 @@ class Fighter(Player):
 
         self.agility = 0
         self.strength = 1
+        self.intelligence = 0
+        self.wisdom = 0
         self.name = name
         self.health = health
         self.max_health = health
         self.weapon = melee
         self.health_bar = HealthBar(self, color="green")
+
+class Wizard(Player):
+    def __init__(self,
+                name:str,
+                health:int):
+
+        self.agility = 0
+        self.strength = 0
+        self.intelligence = 1
+        self.wisdom = 0
+        self.name = name
+        self.health = health
+        self.max_health = health
+        self.weapon = melee
+        self.health_bar = HealthBar(self, color="yellow")
+
+class Bard(Player):
+    def __init__(self,
+                name:str,
+                health:int):
+
+        self.agility = 0
+        self.strength = 0
+        self.intelligence = 1
+        self.wisdom = 0
+        self.name = name
+        self.health = health
+        self.max_health = health
+        self.weapon = melee
+        self.health_bar = HealthBar(self, color="yellow")

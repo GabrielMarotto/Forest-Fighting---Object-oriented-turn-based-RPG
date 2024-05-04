@@ -1,6 +1,6 @@
 import random
 import time
-from Personagens import Player,Rogue, Fighter
+from Personagens import Player,Rogue, Fighter, Wizard, Bard
 from Weapons import javelin,small_axe, battleaxe, longbow, longsword, dagger, melee
 from lib import *
 from BarraVida import HealthBar
