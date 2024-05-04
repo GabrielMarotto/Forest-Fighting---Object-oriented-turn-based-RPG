@@ -31,4 +31,4 @@ maracas = Weapon('Maracas','wisdom','Tier 1')
 viola = Weapon('Viola', 'wisdom', 'Tier 2')
 drums = Weapon('Bateria','wisdom', 'Tier 3')
 
-melee = Weapon('Punhos','strength')
+melee = Weapon('Punhos','strength', 'Tier 0')

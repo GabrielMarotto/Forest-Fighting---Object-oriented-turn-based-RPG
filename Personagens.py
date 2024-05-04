@@ -273,4 +273,4 @@ class Bard(Player):
         self.health = health
         self.max_health = health
         self.weapon = melee
-        self.health_bar = HealthBar(self, color="yellow")
+        self.health_bar = HealthBar(self, color="red")

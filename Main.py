@@ -43,9 +43,9 @@ if (escolha_p1 == "1" or escolha_p1 == "ladino"):
 elif (escolha_p1 == "2" or escolha_p1 == "guerreiro"):
     Player1 = Fighter(nome_p1,50)
 elif (escolha_p1 == "3" or escolha_p1 == "mago"):
-    Player1 = Fighter(nome_p1,50)
-elif (escolha_p1 == "2" or escolha_p1 == "bardo"):
-    Player1 = Fighter(nome_p1,50)
+    Player1 = Wizard(nome_p1,50)
+elif (escolha_p1 == "4" or escolha_p1 == "bardo"):
+    Player1 = Bard(nome_p1,50)
 
 
 
@@ -65,6 +65,10 @@ if (escolha_p2 == "1" or escolha_p2 == "ladino"):
     Player2 = Rogue(nome_p2,50)
 elif (escolha_p2 == "2" or escolha_p2 == "guerreiro"):
     Player2 = Fighter(nome_p2,50)
+elif (escolha_p2 == "3" or escolha_p2 == "mago"):
+    Player2 = Wizard(nome_p2,50)
+elif (escolha_p2 == "4" or escolha_p2 == "bardo"):
+    Player2 = Bard(nome_p2,50)
 
 Player2.initial_item()
 print(f" {nome_p2} vasculha a floresta por uma arma, e acha...")
@@ -85,7 +89,7 @@ while (Player1.health > 0 and Player2.health > 0):
     print(linha())
     print(f"JOGADOR 1 ({nome_p1})".center(48))
     print(linha())
-    print(f"ARMA:{Player1.weapon.name} | ATRIBUTO PRINCIPAL:{Player1.strength if Player1.strength > Player1.agility else Player1.agility}".center(48))
+    print(f"ARMA:{Player1.weapon.name} | ATRIBUTO PRINCIPAL:{Player1.strength if Player1.strength> Player1.agility else Player1.wisdom if Player1.wisdom > Player1.agility else Player1.intelligence if Player1.intelligence > Player1.agility else Player1.agility}".center(48))
     print(linha())
 
 
@@ -102,7 +106,7 @@ while (Player1.health > 0 and Player2.health > 0):
     print(linha())
     print(f"JOGADOR 2 ({nome_p2})".center(48))
     print(linha())
-    print(f"ARMA:{Player2.weapon.name} | ATRIBUTO PRINCIPAL:{Player2.strength if Player2.strength > Player2.agility else Player2.agility}".center(48))
+    print(f"ARMA:{Player2.weapon.name} | ATRIBUTO PRINCIPAL:{str(Player2.strength if Player2.strength> Player2.agility else Player2.wisdom if Player2.wisdom > Player2.agility else Player2.intelligence if Player2.intelligence > Player2.agility else Player2.agility)}".center(48))
     print(linha())
 
     escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
