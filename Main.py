@@ -24,22 +24,30 @@ print("A floresta contém tudo o que você precisa para a vitória...")
 print("se a sorte estiver do seu lado.")
 # time.sleep(2)
 
-
+# Menu principal de escolhas do jogador
 print(linha())
-escolha_p1 = input("\n Jogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n\n----->")
+escolha_p1 = input("\n Jogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
 nome_p1 = input("Jogador 1, qual seu nome? ")
 time.sleep(1)
-escolha_p2 = input("\n Jogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n\n----->")
+escolha_p2 = input("\n Jogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
 nome_p2 = input("Jogador 2, qual seu nome? ")
 
 escolha_p1 = escolha_p1.lower()
 escolha_p2 = escolha_p2.lower()
-print(linha())
 
+
+#Criando os objetos de cada jogador e decidindo seu item inicial
+print(linha())
 if (escolha_p1 == "1" or escolha_p1 == "ladino"):
     Player1 = Rogue(nome_p1,50)
 elif (escolha_p1 == "2" or escolha_p1 == "guerreiro"):
     Player1 = Fighter(nome_p1,50)
+elif (escolha_p1 == "3" or escolha_p1 == "mago"):
+    Player1 = Fighter(nome_p1,50)
+elif (escolha_p1 == "2" or escolha_p1 == "bardo"):
+    Player1 = Fighter(nome_p1,50)
+
+
 
 Player1.initial_item()
 print(f"{nome_p1} vasculha a floresta por uma arma, e acha...")

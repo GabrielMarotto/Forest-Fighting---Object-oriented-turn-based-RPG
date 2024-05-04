@@ -196,6 +196,24 @@ class Player:
             elif (initial_item_figther == 3):
                 self.weapon = battleaxe
 
+        if (self.__class__ == Wizard):
+            initial_item_wizard = random.randint(1,3)      
+            if (initial_item_wizard == 1):
+                 self.weapon = arcane_spark
+            elif (initial_item_wizard == 2):
+                 self.weapon = lightning_bolt
+            elif (initial_item_wizard == 3):
+                self.weapon = fireball
+
+        if (self.__class__ == Bard):
+            initial_item_bard = random.randint(1,3)      
+            if (initial_item_bard == 1):
+                 self.weapon = maracas
+            elif (initial_item_bard == 2):
+                 self.weapon = viola
+            elif (initial_item_bard == 3):
+                self.weapon = drums
+
 
 class Rogue(Player):
     def __init__(self,
