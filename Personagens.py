@@ -127,6 +127,18 @@ class Player:
                 time.sleep(0.5)
                 self.strength += 8
 
+            else:
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Nada.')
+                time.sleep(0.5)
+                
         if(self.__class__ == Rogue):
             if (tabela_inwhile >=1 and tabela_inwhile <=10):
                 print("Você vasculha a floresta e acha...")
@@ -166,6 +178,18 @@ class Player:
                 print('Um Talismã do universitário fim de semestre! Sua agilidade aumenta em 8.')
                 time.sleep(0.5)
                 self.agility += 8
+
+            else:
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Nada.')
+                time.sleep(0.5)
 
         if(self.__class__ == Wizard):
             if (tabela_inwhile >=1 and tabela_inwhile <=10):
@@ -207,6 +231,18 @@ class Player:
                 time.sleep(0.5)
                 self.intelligence += 8
 
+            else:
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Nada.')
+                time.sleep(0.5)
+
         if(self.__class__ == Bard):
             if (tabela_inwhile >=1 and tabela_inwhile <=10):
                 print("Você vasculha a floresta e acha...")
@@ -247,19 +283,19 @@ class Player:
                 time.sleep(0.5)
                 self.wisdom += 8
 
+            else:
+                print("Você vasculha a floresta e acha...")
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(2)
+                print('Nada.')
+                time.sleep(0.5)
         
 
-        else:
-            print("Você vasculha a floresta e acha...")
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(2)
-            print('Nada.')
-            time.sleep(0.5)
 
     def initial_item(self):
         if (self.__class__ == Rogue):
