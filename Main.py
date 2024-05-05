@@ -80,6 +80,8 @@ cabecalho("O CONFRONTO COMEÇA, ATÉ A MORTE!")
 #Aqui começa os turnos dos jogadores
 while (Player1.health > 0 and Player2.health > 0):
     
+    #TURNO DO JOGADOR 1
+    #Menu do jogador
     print(linha())
     print(f"JOGADOR 1 ({nome_p1})".center(58))
     print(linha())
@@ -88,7 +90,7 @@ while (Player1.health > 0 and Player2.health > 0):
     Player1.health_bar.draw()
     print(linha())
 
-
+    #Ações do jogador
     escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
     
     if (escolha == "1"):
@@ -99,8 +101,13 @@ while (Player1.health > 0 and Player2.health > 0):
 
     elif (escolha == "2"):
         Player1.get_item()
-    
 
+    #Condicional para parar o loop caso o jogador ganhe
+    if (Player2.health == 0):
+        break
+    
+    #TURNO DO JOGADOR 2
+    #Menu do jogador
     print(linha())
     print(f"JOGADOR 2 ({nome_p2})".center(58))
     print(linha())
@@ -109,6 +116,7 @@ while (Player1.health > 0 and Player2.health > 0):
     Player2.health_bar.draw()
     print(linha())
 
+    #Ações do jogador
     escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
 
     if (escolha == "1"):
@@ -119,3 +127,27 @@ while (Player1.health > 0 and Player2.health > 0):
 
     elif (escolha == "2"):
         Player2.get_item()
+
+    #Condicional para parar o loop caso o jogador ganhe
+    if (Player1.health == 0):
+        break
+
+#Terminado o loop while, tela de vencedor.
+if (Player1.health > 0):
+    time.sleep(1)
+    print(linha())
+    print(f"{nome_p2} cai diante de sua grandeza!{nome_p1}, VOCÊ É O VENCEDOR!".center(58))
+    print(linha())
+    time.sleep(1)
+    print("Obrigado por jogar Forest Fighting. A floresta sempre lhe aguarda novamente.".center(58))
+    print(linha())
+
+
+elif (Player2.health > 0):
+    time.sleep(1)
+    print(linha())
+    print(f"{nome_p1} cai diante de sua grandeza!{nome_p2}, VOCÊ É O VENCEDOR!".center(58))
+    print(linha())
+    time.sleep(1)
+    print("Obrigado por jogar Forest Fighting. A floresta sempre lhe aguarda novamente.".center(58))
+    print(linha())
