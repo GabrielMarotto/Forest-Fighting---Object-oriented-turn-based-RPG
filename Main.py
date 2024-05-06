@@ -103,7 +103,7 @@ while (Player1.health > 0 and Player2.health > 0):
         Player1.get_item()
 
     #Condicional para parar o loop caso o jogador ganhe
-    if (Player2.health == 0):
+    if (Player2.health <= 0):
         break
     
     #TURNO DO JOGADOR 2
@@ -129,7 +129,7 @@ while (Player1.health > 0 and Player2.health > 0):
         Player2.get_item()
 
     #Condicional para parar o loop caso o jogador ganhe
-    if (Player1.health == 0):
+    if (Player1.health <= 0):
         break
 
 #Terminado o loop while, tela de vencedor.
