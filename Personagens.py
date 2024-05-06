@@ -295,8 +295,6 @@ class Player:
                 print('Nada.')
                 time.sleep(0.5)
         
-
-
     def initial_item(self):
         if (self.__class__ == Rogue):
             initial_item_rogue = random.randint(1,3)
@@ -350,6 +348,30 @@ class Rogue(Player):
         self.max_health = health
         self.health_bar = HealthBar(self, color="blue")
 
+    def sneak_attack(self,target):
+        sneak_attack = random.randint(3,8)
+        if (self.weapon == longbow):
+            dice_roll = random.randint(1,6)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.agility + sneak_attack} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.agility - sneak_attack
+
+        elif (self.weapon == dagger):
+            dice_roll = random.randint(1,4)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.agility + sneak_attack} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.agility - sneak_attack
+
+        elif (self.weapon == longsword):
+            dice_roll = random.randint(1,12)
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.agility + sneak_attack} de dano ao inimigo.")            
+            target.health = target.health - dice_roll - self.agility - sneak_attack 
+
+        elif (self.weapon == melee):
+            print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {sneak_attack} de dano ao inimigo.")            
+            target.health = target.health - sneak_attack 
+
+        target.health_bar.update()
+
+
 class Fighter(Player):
     def __init__(self,
                 name:str,
@@ -380,6 +402,19 @@ class Wizard(Player):
         self.weapon = melee
         self.health_bar = HealthBar(self, color="yellow")
 
+    def drain_health(self,target):
+        if (self.health < 50):
+            print(f"Você canaliza sua energia arcana, drenando 10 pontos de vida do inimigo e adicionando a sua.")
+            target.health -= 10
+            self.health += 10
+
+        if (self.health > 50):    
+            self.health = 50
+
+        self.health_bar.update()
+        target.health_bar.update()
+
+
 class Bard(Player):
     def __init__(self,
                 name:str,
@@ -387,10 +422,16 @@ class Bard(Player):
 
         self.agility = 0
         self.strength = 0
-        self.intelligence = 1
-        self.wisdom = 0
+        self.intelligence = 0
+        self.wisdom = 1
         self.name = name
         self.health = health
         self.max_health = health
         self.weapon = melee
         self.health_bar = HealthBar(self, color="red")
+
+    def life_song(self):
+        rest_song_roll = random.randint = (6,16)
+        rest_song_health = rest_song_roll + self.wisdom
+        print(f"Você toca uma melodia para acalmar seu coração e focar sua mente. Você recupera {rest_song_health} de vida.")
+        self.health_bar.update()

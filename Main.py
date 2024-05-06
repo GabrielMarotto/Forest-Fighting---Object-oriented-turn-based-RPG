@@ -30,17 +30,16 @@ escolha_p2 = escolha_p2.lower()
 
 
 #Criando os objetos de cada jogador e decidindo seu item inicial
+#Player 1
 print(linha())
 if (escolha_p1 == "1" or escolha_p1 == "ladino"):
     Player1 = Rogue(nome_p1,50)
 elif (escolha_p1 == "2" or escolha_p1 == "guerreiro"):
-    Player1 = Fighter(nome_p1,50)
+    Player1 = Fighter(nome_p1,70)
 elif (escolha_p1 == "3" or escolha_p1 == "mago"):
     Player1 = Wizard(nome_p1,50)
 elif (escolha_p1 == "4" or escolha_p1 == "bardo"):
     Player1 = Bard(nome_p1,50)
-
-
 
 Player1.initial_item()
 print(f"{nome_p1} vasculha a floresta por uma arma, e acha...")
@@ -54,10 +53,11 @@ time.sleep(2)
 print(f'Um(a) {Player1.weapon.name}!')
 time.sleep(0.5)
 
+#Player2
 if (escolha_p2 == "1" or escolha_p2 == "ladino"):
     Player2 = Rogue(nome_p2,50)
 elif (escolha_p2 == "2" or escolha_p2 == "guerreiro"):
-    Player2 = Fighter(nome_p2,50)
+    Player2 = Fighter(nome_p2,70)
 elif (escolha_p2 == "3" or escolha_p2 == "mago"):
     Player2 = Wizard(nome_p2,50)
 elif (escolha_p2 == "4" or escolha_p2 == "bardo"):
@@ -76,7 +76,13 @@ print(f'Um(a) {Player2.weapon.name}!')
 time.sleep(2)
 
 cabecalho("O CONFRONTO COMEÇA, ATÉ A MORTE!")
+cont_rogue_p1 = 0
+cont_wizard_p1 = 0
+cont_bard_p1 = 0
 
+cont_rogue_p2 = 0
+cont_wizard_p2 = 0
+cont_bard_p2 = 0
 #Aqui começa os turnos dos jogadores
 while (Player1.health > 0 and Player2.health > 0):
     
@@ -91,16 +97,73 @@ while (Player1.health > 0 and Player2.health > 0):
     print(linha())
 
     #Ações do jogador
-    escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
     
-    if (escolha == "1"):
-        Player1.weapon_attack(Player2)
-        time.sleep(1)
-        Player2.health_bar.draw()
-        time.sleep(1)
+    if (Player1.__class__ == Rogue and cont_rogue_p1 == 0):
+        escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
+    
+        if (escolha == "1"):
+            Player1.weapon_attack(Player2)
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
 
-    elif (escolha == "2"):
-        Player1.get_item()
+        elif (escolha == "2"):
+            Player1.get_item()
+
+        elif (escolha == "3"):
+            Player1.sneak_attack()
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+            cont_rogue_p1 +=1
+
+    elif (Player1.__class__ == Wizard and cont_wizard_p1 == 0):
+        escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
+    
+        if (escolha == "1"):
+            Player1.weapon_attack(Player2)
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+
+        elif (escolha == "2"):
+            Player1.get_item()
+
+        elif (escolha == "3"):
+            Player1.drain_health()
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+            cont_wizard_p1 +=1
+
+    elif (Player1.__class__ == Bard and cont_bard_p1 == 0):
+        escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
+    
+        if (escolha == "1"):
+            Player1.weapon_attack(Player2)
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+
+        elif (escolha == "2"):
+            Player1.get_item()
+
+        elif (escolha == "3"):
+            Player1.life_song()
+            cont_bard_p1 +=1
+            time.sleep(1)
+    
+    else:  
+        escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+        
+        if (escolha == "1"):
+            Player1.weapon_attack(Player2)
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+
+        elif (escolha == "2"):
+            Player1.get_item()
 
     #Condicional para parar o loop caso o jogador ganhe
     if (Player2.health <= 0):
@@ -117,16 +180,72 @@ while (Player1.health > 0 and Player2.health > 0):
     print(linha())
 
     #Ações do jogador
-    escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+    if (Player2.__class__ == Rogue and cont_rogue_p2 == 0):
+        escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
+    
+        if (escolha == "1"):
+            Player1.weapon_attack(Player2)
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
 
-    if (escolha == "1"):
-        Player2.weapon_attack(Player1)
-        time.sleep(1)
-        Player1.health_bar.draw()
-        time.sleep(1)
+        elif (escolha == "2"):
+            Player1.get_item()
 
-    elif (escolha == "2"):
-        Player2.get_item()
+        elif (escolha == "3"):
+            Player1.sneak_attack()
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+            cont_rogue +=1
+    #TO DO, consertar as váriaveis do menu do Player 2 a partir daqui
+    elif (Player1.__class__ == Wizard and cont_wizard == 0):
+        escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
+    
+        if (escolha == "1"):
+            Player1.weapon_attack(Player2)
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+
+        elif (escolha == "2"):
+            Player1.get_item()
+
+        elif (escolha == "3"):
+            Player1.drain_health()
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+            cont_wizard +=1
+
+    elif (Player1.__class__ == Bard and cont_bard == 0):
+        escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
+    
+        if (escolha == "1"):
+            Player1.weapon_attack(Player2)
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+
+        elif (escolha == "2"):
+            Player1.get_item()
+
+        elif (escolha == "3"):
+            Player1.life_song()
+            cont_bard +=1
+            time.sleep(1)
+    
+    else:  
+        escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+        
+        if (escolha == "1"):
+            Player1.weapon_attack(Player2)
+            time.sleep(1)
+            Player2.health_bar.draw()
+            time.sleep(1)
+
+        elif (escolha == "2"):
+            Player1.get_item()
 
     #Condicional para parar o loop caso o jogador ganhe
     if (Player1.health <= 0):
