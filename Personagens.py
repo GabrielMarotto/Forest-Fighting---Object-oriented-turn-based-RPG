@@ -349,7 +349,7 @@ class Rogue(Player):
         self.health_bar = HealthBar(self, color="blue")
 
     def sneak_attack(self,target):
-        sneak_attack = random.randint(3,8)
+        sneak_attack = random.randint(4,9)
         if (self.weapon == longbow):
             dice_roll = random.randint(1,6)
             print(f"\nVocê ataca com seu(a) {self.weapon.name}, causando {dice_roll + self.agility + sneak_attack} de dano ao inimigo.")            
@@ -405,8 +405,8 @@ class Wizard(Player):
     def drain_health(self,target):
         if (self.health < 50):
             print(f"Você canaliza sua energia arcana, drenando 10 pontos de vida do inimigo e adicionando a sua.")
-            target.health -= 10
-            self.health += 10
+            target.health = target.health - 10
+            self.health = self.health + 10
 
         if (self.health > 50):    
             self.health = 50
@@ -431,7 +431,8 @@ class Bard(Player):
         self.health_bar = HealthBar(self, color="red")
 
     def life_song(self):
-        rest_song_roll = random.randint = (6,16)
+        rest_song_roll = random.randint(8,16)
         rest_song_health = rest_song_roll + self.wisdom
         print(f"Você toca uma melodia para acalmar seu coração e focar sua mente. Você recupera {rest_song_health} de vida.")
+        self.health = self.health + rest_song_health
         self.health_bar.update()

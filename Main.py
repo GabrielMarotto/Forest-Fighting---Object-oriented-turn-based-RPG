@@ -83,6 +83,7 @@ cont_bard_p1 = 0
 cont_rogue_p2 = 0
 cont_wizard_p2 = 0
 cont_bard_p2 = 0
+
 #Aqui começa os turnos dos jogadores
 while (Player1.health > 0 and Player2.health > 0):
     
@@ -111,7 +112,7 @@ while (Player1.health > 0 and Player2.health > 0):
             Player1.get_item()
 
         elif (escolha == "3"):
-            Player1.sneak_attack()
+            Player1.sneak_attack(Player2)
             time.sleep(1)
             Player2.health_bar.draw()
             time.sleep(1)
@@ -130,7 +131,7 @@ while (Player1.health > 0 and Player2.health > 0):
             Player1.get_item()
 
         elif (escolha == "3"):
-            Player1.drain_health()
+            Player1.drain_health(Player2)
             time.sleep(1)
             Player2.health_bar.draw()
             time.sleep(1)
@@ -184,68 +185,68 @@ while (Player1.health > 0 and Player2.health > 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
     
         if (escolha == "1"):
-            Player1.weapon_attack(Player2)
+            Player2.weapon_attack(Player1)
             time.sleep(1)
-            Player2.health_bar.draw()
+            Player1.health_bar.draw()
             time.sleep(1)
 
         elif (escolha == "2"):
-            Player1.get_item()
+            Player2.get_item()
 
         elif (escolha == "3"):
-            Player1.sneak_attack()
+            Player2.sneak_attack(Player1)
             time.sleep(1)
-            Player2.health_bar.draw()
+            Player1.health_bar.draw()
             time.sleep(1)
-            cont_rogue +=1
+            cont_rogue_p2 +=1
     #TO DO, consertar as váriaveis do menu do Player 2 a partir daqui
-    elif (Player1.__class__ == Wizard and cont_wizard == 0):
+    elif (Player2.__class__ == Wizard and cont_wizard_p2 == 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
     
         if (escolha == "1"):
-            Player1.weapon_attack(Player2)
+            Player2.weapon_attack(Player1)
             time.sleep(1)
-            Player2.health_bar.draw()
+            Player1.health_bar.draw()
             time.sleep(1)
 
         elif (escolha == "2"):
-            Player1.get_item()
+            Player2.get_item()
 
         elif (escolha == "3"):
-            Player1.drain_health()
+            Player2.drain_health(Player1)
             time.sleep(1)
-            Player2.health_bar.draw()
+            Player1.health_bar.draw()
             time.sleep(1)
-            cont_wizard +=1
+            cont_wizard_p2 +=1
 
-    elif (Player1.__class__ == Bard and cont_bard == 0):
+    elif (Player2.__class__ == Bard and cont_bard_p2 == 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
     
         if (escolha == "1"):
-            Player1.weapon_attack(Player2)
+            Player2.weapon_attack(Player1)
             time.sleep(1)
-            Player2.health_bar.draw()
+            Player1.health_bar.draw()
             time.sleep(1)
 
         elif (escolha == "2"):
-            Player1.get_item()
+            Player2.get_item()
 
         elif (escolha == "3"):
-            Player1.life_song()
-            cont_bard +=1
+            Player2.life_song()
+            cont_bard_p2 +=1
             time.sleep(1)
     
     else:  
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
         
         if (escolha == "1"):
-            Player1.weapon_attack(Player2)
+            Player2.weapon_attack(Player1)
             time.sleep(1)
-            Player2.health_bar.draw()
+            Player1.health_bar.draw()
             time.sleep(1)
 
         elif (escolha == "2"):
-            Player1.get_item()
+            Player2.get_item()
 
     #Condicional para parar o loop caso o jogador ganhe
     if (Player1.health <= 0):
@@ -255,7 +256,7 @@ while (Player1.health > 0 and Player2.health > 0):
 if (Player1.health > 0):
     time.sleep(1)
     print(linha())
-    print(f"{nome_p2} cai diante de sua grandeza!{nome_p1}, VOCÊ É O VENCEDOR!".center(58))
+    print(f"{nome_p2} cai diante de sua grandeza! {nome_p1},VOCÊ É O VENCEDOR!".center(58))
     print(linha())
     time.sleep(1)
     print("Obrigado por jogar Forest Fighting. A floresta sempre lhe aguarda novamente.".center(58))
@@ -265,7 +266,7 @@ if (Player1.health > 0):
 elif (Player2.health > 0):
     time.sleep(1)
     print(linha())
-    print(f"{nome_p1} cai diante de sua grandeza!{nome_p2}, VOCÊ É O VENCEDOR!".center(58))
+    print(f"{nome_p1} cai diante de sua grandeza! {nome_p2},VOCÊ É O VENCEDOR!".center(58))
     print(linha())
     time.sleep(1)
     print("Obrigado por jogar Forest Fighting. A floresta sempre lhe aguarda novamente.".center(58))
