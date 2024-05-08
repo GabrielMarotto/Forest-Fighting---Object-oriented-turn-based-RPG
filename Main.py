@@ -1,21 +1,20 @@
 import random
 import time
 from Personagens import Player,Rogue, Fighter, Wizard, Bard
-from Weapons import javelin,small_axe, battleaxe, longbow, longsword, dagger, melee
+from Weapons import *
 from lib import *
 from BarraVida import HealthBar
 
 # Menu principal pré-while
 start_graphic()
 
-
-time.sleep(2)
+# time.sleep(2)
 print("\n\nVocê se encontra no meio da Floresta dos Elfos Selvagens, com um inimigo a sua frente.")
-time.sleep(3)
+# time.sleep(3)
 print("A floresta contém tudo o que você precisa para a vitória...")
-time.sleep(3)
+# time.sleep(3)
 print("se a sorte estiver do seu lado.")
-time.sleep(2)
+# time.sleep(2)
 
 # Menu principal de escolhas do jogador
 print(linha())
@@ -43,15 +42,15 @@ elif (escolha_p1 == "4" or escolha_p1 == "bardo"):
 
 Player1.initial_item()
 print(f"{nome_p1} vasculha a floresta por uma arma, e acha...")
-time.sleep(1)
+# time.sleep(1)
 print('.')
-time.sleep(1)
+# time.sleep(1)
 print('.')
-time.sleep(1)
+# time.sleep(1)
 print('.')
-time.sleep(2)
+# time.sleep(2)
 print(f'Um(a) {Player1.weapon.name}!')
-time.sleep(0.5)
+# time.sleep(0.5)
 
 #Player2
 if (escolha_p2 == "1" or escolha_p2 == "ladino"):
@@ -65,15 +64,15 @@ elif (escolha_p2 == "4" or escolha_p2 == "bardo"):
 
 Player2.initial_item()
 print(f"{nome_p2} vasculha a floresta por uma arma, e acha...")
-time.sleep(1)
+# time.sleep(1)
 print('.')
-time.sleep(1)
+# time.sleep(1)
 print('.')
-time.sleep(1)
+# time.sleep(1)
 print('.')
-time.sleep(2)
+# time.sleep(2)
 print(f'Um(a) {Player2.weapon.name}!')
-time.sleep(2)
+# time.sleep(2)
 
 cabecalho("O CONFRONTO COMEÇA, ATÉ A MORTE!")
 cont_rogue_p1 = 0
@@ -102,6 +101,11 @@ while (Player1.health > 0 and Player2.health > 0):
     if (Player1.__class__ == Rogue and cont_rogue_p1 == 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
     
+        while (escolha !="1" and escolha !="2" and escolha != "3"):
+            print("Opção não disponível")        
+            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
+
+
         if (escolha == "1"):
             Player1.weapon_attack(Player2)
             time.sleep(1)
@@ -120,7 +124,11 @@ while (Player1.health > 0 and Player2.health > 0):
 
     elif (Player1.__class__ == Wizard and cont_wizard_p1 == 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
-    
+        
+        while (escolha !="1" and escolha !="2" and escolha != "3"):
+            print("Opção não disponível") 
+            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
+             
         if (escolha == "1"):
             Player1.weapon_attack(Player2)
             time.sleep(1)
@@ -139,7 +147,11 @@ while (Player1.health > 0 and Player2.health > 0):
 
     elif (Player1.__class__ == Bard and cont_bard_p1 == 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
-    
+
+        while (escolha !="1" and escolha !="2" and escolha != "3"):
+            print("Opção não disponível")
+            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
+            
         if (escolha == "1"):
             Player1.weapon_attack(Player2)
             time.sleep(1)
@@ -155,7 +167,6 @@ while (Player1.health > 0 and Player2.health > 0):
             time.sleep(1)
     
     else:
-        cont_escolhas = 0  
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
         while (escolha !="1" and escolha !="2"):
             print("Opção não disponível")
@@ -166,11 +177,9 @@ while (Player1.health > 0 and Player2.health > 0):
             time.sleep(1)
             Player2.health_bar.draw()
             time.sleep(1)
-            cont_escolhas +=1
 
         elif (escolha == "2"):
             Player1.get_item()
-            cont_escolhas +=1
 
     #Condicional para parar o loop caso o jogador ganhe
     if (Player2.health <= 0):
@@ -189,7 +198,11 @@ while (Player1.health > 0 and Player2.health > 0):
     #Ações do jogador
     if (Player2.__class__ == Rogue and cont_rogue_p2 == 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
-    
+
+        while (escolha !="1" and escolha !="2" and escolha != "3"):
+            print("Opção não disponível")
+            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
+        
         if (escolha == "1"):
             Player2.weapon_attack(Player1)
             time.sleep(1)
@@ -209,6 +222,10 @@ while (Player1.health > 0 and Player2.health > 0):
     elif (Player2.__class__ == Wizard and cont_wizard_p2 == 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
     
+        while (escolha !="1" and escolha !="2" and escolha != "3"):
+            print("Opção não disponível")        
+            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
+    
         if (escolha == "1"):
             Player2.weapon_attack(Player1)
             time.sleep(1)
@@ -227,7 +244,11 @@ while (Player1.health > 0 and Player2.health > 0):
 
     elif (Player2.__class__ == Bard and cont_bard_p2 == 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
-    
+
+        while (escolha !="1" and escolha !="2" and escolha != "3"):
+            print("Opção não disponível")
+            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
+            
         if (escolha == "1"):
             Player2.weapon_attack(Player1)
             time.sleep(1)
@@ -244,7 +265,11 @@ while (Player1.health > 0 and Player2.health > 0):
     
     else:  
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
-        
+
+        while (escolha !="1" and escolha !="2"):
+            print("Opção não disponível") 
+            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+  
         if (escolha == "1"):
             Player2.weapon_attack(Player1)
             time.sleep(1)

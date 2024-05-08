@@ -371,7 +371,6 @@ class Rogue(Player):
 
         target.health_bar.update()
 
-
 class Fighter(Player):
     def __init__(self,
                 name:str,
@@ -413,7 +412,6 @@ class Wizard(Player):
 
         self.health_bar.update()
         target.health_bar.update()
-
 
 class Bard(Player):
     def __init__(self,
