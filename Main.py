@@ -9,13 +9,13 @@ from BarraVida import HealthBar
 start_graphic()
 
 
-# time.sleep(2)
+time.sleep(2)
 print("\n\nVocê se encontra no meio da Floresta dos Elfos Selvagens, com um inimigo a sua frente.")
-# time.sleep(3)
+time.sleep(3)
 print("A floresta contém tudo o que você precisa para a vitória...")
-# time.sleep(3)
+time.sleep(3)
 print("se a sorte estiver do seu lado.")
-# time.sleep(2)
+time.sleep(2)
 
 # Menu principal de escolhas do jogador
 print(linha())
@@ -154,17 +154,23 @@ while (Player1.health > 0 and Player2.health > 0):
             cont_bard_p1 +=1
             time.sleep(1)
     
-    else:  
+    else:
+        cont_escolhas = 0  
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
-        
+        while (escolha !="1" and escolha !="2"):
+            print("Opção não disponível")
+            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+            
         if (escolha == "1"):
             Player1.weapon_attack(Player2)
             time.sleep(1)
             Player2.health_bar.draw()
             time.sleep(1)
+            cont_escolhas +=1
 
         elif (escolha == "2"):
             Player1.get_item()
+            cont_escolhas +=1
 
     #Condicional para parar o loop caso o jogador ganhe
     if (Player2.health <= 0):
@@ -271,3 +277,4 @@ elif (Player2.health > 0):
     time.sleep(1)
     print("Obrigado por jogar Forest Fighting. A floresta sempre lhe aguarda novamente.".center(58))
     print(linha())
+    start_graphic()
