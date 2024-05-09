@@ -16,12 +16,23 @@ print("A floresta contém tudo o que você precisa para a vitória...")
 print("se a sorte estiver do seu lado.")
 # time.sleep(2)
 
+
+
+
 # Menu principal de escolhas do jogador
 print(linha())
 escolha_p1 = input("\nJogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
+while escolha_p1 not in ["1", "2", "3", "4"]:
+    print("Opção invalida, por favor escolha um número da lista!")
+    escolha_p1 = input("\nJogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
 nome_p1 = input("Jogador 1, qual seu nome? ")
+
 time.sleep(1)
+
 escolha_p2 = input("\nJogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
+while escolha_p2 not in ["1", "2", "3", "4"]:
+    print("Opção invalida, por favor escolha um número da lista!")
+    escolha_p2 = input("\nJogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
 nome_p2 = input("Jogador 2, qual seu nome? ")
 
 escolha_p1 = escolha_p1.lower()
