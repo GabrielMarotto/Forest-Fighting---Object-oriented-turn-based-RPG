@@ -23,7 +23,8 @@ print("se a sorte estiver do seu lado.")
 print(linha())
 escolha_p1 = input("\nJogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
 while escolha_p1 not in ["1", "2", "3", "4"]:
-    print("Opção invalida, por favor escolha um número da lista!")
+    cabecalho("Opção inválida, por favor escolha um número da lista!")
+    time.sleep(1)
     escolha_p1 = input("\nJogador 1, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
 nome_p1 = input("Jogador 1, qual seu nome? ")
 
@@ -31,7 +32,8 @@ time.sleep(1)
 
 escolha_p2 = input("\nJogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
 while escolha_p2 not in ["1", "2", "3", "4"]:
-    print("Opção invalida, por favor escolha um número da lista!")
+    cabecalho("Opção inválida, por favor escolha um número da lista!")
+    time.sleep(1)
     escolha_p2 = input("\nJogador 2, escolha seu personagem.\n\n[1]Ladino\n[2]Guerreiro\n[3]Mago\n[4]Bardo\n\n----->")
 nome_p2 = input("Jogador 2, qual seu nome? ")
 
@@ -113,7 +115,8 @@ while (Player1.health > 0 and Player2.health > 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
     
         while (escolha !="1" and escolha !="2" and escolha != "3"):
-            print("Opção não disponível")        
+            cabecalho("Opção não disponível")
+            time.sleep(1)        
             escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
 
 
@@ -137,7 +140,8 @@ while (Player1.health > 0 and Player2.health > 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
         
         while (escolha !="1" and escolha !="2" and escolha != "3"):
-            print("Opção não disponível") 
+            cabecalho("Opção não disponível")
+            time.sleep(1)
             escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
              
         if (escolha == "1"):
@@ -160,7 +164,8 @@ while (Player1.health > 0 and Player2.health > 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
 
         while (escolha !="1" and escolha !="2" and escolha != "3"):
-            print("Opção não disponível")
+            cabecalho("Opção não disponível")
+            time.sleep(1)
             escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
             
         if (escolha == "1"):
@@ -180,7 +185,8 @@ while (Player1.health > 0 and Player2.health > 0):
     else:
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
         while (escolha !="1" and escolha !="2"):
-            print("Opção não disponível")
+            cabecalho("Opção não disponível") 
+            time.sleep(1)
             escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
             
         if (escolha == "1"):
@@ -211,7 +217,8 @@ while (Player1.health > 0 and Player2.health > 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
 
         while (escolha !="1" and escolha !="2" and escolha != "3"):
-            print("Opção não disponível")
+            cabecalho("Opção não disponível") 
+            time.sleep(1)
             escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
         
         if (escolha == "1"):
@@ -234,7 +241,8 @@ while (Player1.health > 0 and Player2.health > 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
     
         while (escolha !="1" and escolha !="2" and escolha != "3"):
-            print("Opção não disponível")        
+            cabecalho("Opção não disponível") 
+            time.sleep(1)     
             escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
     
         if (escolha == "1"):
@@ -257,7 +265,8 @@ while (Player1.health > 0 and Player2.health > 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
 
         while (escolha !="1" and escolha !="2" and escolha != "3"):
-            print("Opção não disponível")
+            cabecalho("Opção não disponível") 
+            time.sleep(1)
             escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
             
         if (escolha == "1"):
@@ -278,7 +287,8 @@ while (Player1.health > 0 and Player2.health > 0):
         escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
 
         while (escolha !="1" and escolha !="2"):
-            print("Opção não disponível") 
+            cabecalho("Opção não disponível")
+            time.sleep(1)
             escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
   
         if (escolha == "1"):
@@ -310,7 +320,5 @@ elif (Player2.health > 0):
     print(linha())
     print(f"{nome_p1} cai diante de sua grandeza! {nome_p2},VOCÊ É O VENCEDOR!".center(58))
     print(linha())
-    time.sleep(1)
-    print("Obrigado por jogar Forest Fighting. A floresta sempre lhe aguarda novamente.".center(58))
-    print(linha())
-    start_graphic()
+    time.sleep(2)
+    end_graphic()
