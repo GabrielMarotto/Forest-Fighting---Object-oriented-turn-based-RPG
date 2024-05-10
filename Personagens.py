@@ -83,7 +83,11 @@ class Player:
         elif (self.weapon == melee):
             target.health = target.health - 1 - self.strength
 
+        if (target.health < 0):
+            target.health = 0
+            
         target.health_bar.update()
+
         
     def get_item(self):
         tabela_inwhile = random.randint(0,40)
