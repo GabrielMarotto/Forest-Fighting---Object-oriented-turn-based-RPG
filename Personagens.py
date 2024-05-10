@@ -98,7 +98,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do marombeiro frango! Sua força aumenta em 3.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.strength += 3 
         
             elif (tabela_inwhile >=11 and tabela_inwhile <=15):
@@ -111,7 +111,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do rato de academia! Sua força aumenta em 5.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.strength += 5
 
             elif (tabela_inwhile >=16 and tabela_inwhile <=20):
@@ -124,7 +124,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do Mister Olympia! Sua força aumenta em 8.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.strength += 8
 
             else:
@@ -137,7 +137,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Nada.')
-                time.sleep(0.5)
+                time.sleep(1)
                 
         if(self.__class__ == Rogue):
             if (tabela_inwhile >=1 and tabela_inwhile <=10):
@@ -150,7 +150,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do red bull! Sua agilidade aumenta em 3.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.agility += 3 
         
             elif (tabela_inwhile >=11 and tabela_inwhile <=15):
@@ -163,7 +163,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do gato laranja! Sua agilidade aumenta em 5.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.agility += 5
 
             elif (tabela_inwhile >=16 and tabela_inwhile <=20):
@@ -176,7 +176,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do universitário fim de semestre! Sua agilidade aumenta em 8.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.agility += 8
 
             else:
@@ -189,7 +189,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Nada.')
-                time.sleep(0.5)
+                time.sleep(1)
 
         if(self.__class__ == Wizard):
             if (tabela_inwhile >=1 and tabela_inwhile <=10):
@@ -202,7 +202,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do auto-didata! Sua inteligência aumenta em 3.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.agility += 3 
         
             elif (tabela_inwhile >=11 and tabela_inwhile <=15):
@@ -215,7 +215,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do jogador de DoTa! Sua inteligência aumenta em 5.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.intelligence += 5
 
             elif (tabela_inwhile >=16 and tabela_inwhile <=20):
@@ -228,7 +228,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do jogador de Valorant! Sua inteligência aumenta em 8.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.intelligence += 8
 
             else:
@@ -241,7 +241,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Nada.')
-                time.sleep(0.5)
+                time.sleep(1)
 
         if(self.__class__ == Bard):
             if (tabela_inwhile >=1 and tabela_inwhile <=10):
@@ -254,7 +254,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do aprendiz! Sua sabedoria aumenta em 3.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.wisdom += 3 
         
             elif (tabela_inwhile >=11 and tabela_inwhile <=15):
@@ -267,7 +267,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do multi-instrumentalista! Sua sabedoria aumenta em 5.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.wisdom += 5
 
             elif (tabela_inwhile >=16 and tabela_inwhile <=20):
@@ -280,7 +280,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Um Talismã do virtuoso! Sua sabedoria aumenta em 8.')
-                time.sleep(0.5)
+                time.sleep(4)
                 self.wisdom += 8
 
             else:
@@ -293,7 +293,7 @@ class Player:
                 print('.')
                 time.sleep(2)
                 print('Nada.')
-                time.sleep(0.5)
+                time.sleep(1)
         
     def initial_item(self):
         if (self.__class__ == Rogue):
