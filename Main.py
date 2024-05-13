@@ -95,7 +95,7 @@ def main():
     time.sleep(2.5)
 
     os.system("cls")
-    cabecalho("O CONFRONTO COMEÇA, ATÉ A MORTE!")
+    cabecalho("O CONFRONTO COMEÇA!")
     time.sleep(2.5)
     cont_rogue_p1 = 0
     cont_wizard_p1 = 0
