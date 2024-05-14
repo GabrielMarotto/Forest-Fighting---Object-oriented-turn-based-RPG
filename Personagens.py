@@ -207,7 +207,7 @@ class Player:
                 time.sleep(2)
                 print('Um Talismã do auto-didata! Sua inteligência aumenta em 3.')
                 time.sleep(4)
-                self.agility += 3 
+                self.intelligence += 3 
         
             elif (tabela_inwhile >=11 and tabela_inwhile <=15):
                 print("Você vasculha a floresta e acha...")

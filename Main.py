@@ -8,6 +8,7 @@ from BarraVida import HealthBar
 
 # Menu principal pré-while
 def main():
+    os.system("cls")
     start_graphic()
 
     time.sleep(2)
@@ -19,7 +20,6 @@ def main():
     time.sleep(3)
 
     os.system("cls")
-
 
     # Menu principal de escolhas do jogador
     print(linha())
@@ -96,7 +96,7 @@ def main():
 
     os.system("cls")
     cabecalho("O CONFRONTO COMEÇA!")
-    time.sleep(2.5)
+    time.sleep(2)
     cont_rogue_p1 = 0
     cont_wizard_p1 = 0
     cont_bard_p1 = 0
