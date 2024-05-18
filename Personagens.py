@@ -11,7 +11,7 @@ class Player:
     
         self.name = name
         self.health = health #vida atual
-        self.max_health = health #vida atual
+        self.max_health = health #vida máxima
         self.agility =  0 #Atributo Rogue
         self.strength = 0 #Atributo Fighter
         self.intelligence = 0 #Atributo Mago
