@@ -122,12 +122,12 @@ def main():
         #Ações do jogador
         
         if (Player1.__class__ == Rogue and cont_rogue_p1 == 0):
-            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
+            escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
         
             while (escolha !="1" and escolha !="2" and escolha != "3"):
                 cabecalho("Opção não disponível")
                 time.sleep(1)        
-                escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
+                escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
 
 
             if (escolha == "1"):
@@ -147,12 +147,12 @@ def main():
                 cont_rogue_p1 +=1
 
         elif (Player1.__class__ == Wizard and cont_wizard_p1 == 0):
-            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
+            escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
             
             while (escolha !="1" and escolha !="2" and escolha != "3"):
                 cabecalho("Opção não disponível")
                 time.sleep(1)
-                escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
+                escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
                 
             if (escolha == "1"):
                 Player1.weapon_attack(Player2)
@@ -173,12 +173,12 @@ def main():
                 cont_wizard_p1 +=1
 
         elif (Player1.__class__ == Bard and cont_bard_p1 == 0):
-            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
+            escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
 
             while (escolha !="1" and escolha !="2" and escolha != "3"):
                 cabecalho("Opção não disponível")
                 time.sleep(1)
-                escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
+                escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
                 
             if (escolha == "1"):
                 Player1.weapon_attack(Player2)
@@ -197,11 +197,11 @@ def main():
                 time.sleep(2)
         
         else:
-            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+            escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n\n---->")
             while (escolha !="1" and escolha !="2"):
                 cabecalho("Opção não disponível") 
                 time.sleep(1)
-                escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+                escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n\n---->")
                 
             if (escolha == "1"):
                 Player1.weapon_attack(Player2)
@@ -230,12 +230,12 @@ def main():
 
         #Ações do jogador
         if (Player2.__class__ == Rogue and cont_rogue_p2 == 0):
-            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
+            escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
 
             while (escolha !="1" and escolha !="2" and escolha != "3"):
                 cabecalho("Opção não disponível") 
                 time.sleep(1)
-                escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
+                escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Ataque furtivo (somente um uso)\n\n---->")
             
             if (escolha == "1"):
                 Player2.weapon_attack(Player1)
@@ -254,12 +254,12 @@ def main():
                 cont_rogue_p2 +=1
         #TO DO, consertar as váriaveis do menu do Player 2 a partir daqui
         elif (Player2.__class__ == Wizard and cont_wizard_p2 == 0):
-            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
+            escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
         
             while (escolha !="1" and escolha !="2" and escolha != "3"):
                 cabecalho("Opção não disponível") 
                 time.sleep(1)     
-                escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
+                escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Drenar vida (somente um uso)\n\n---->")
         
             if (escolha == "1"):
                 Player2.weapon_attack(Player1)
@@ -280,12 +280,12 @@ def main():
                 cont_wizard_p2 +=1
 
         elif (Player2.__class__ == Bard and cont_bard_p2 == 0):
-            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
+            escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
 
             while (escolha !="1" and escolha !="2" and escolha != "3"):
                 cabecalho("Opção não disponível") 
                 time.sleep(1)
-                escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
+                escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n[3]Cançao da vida (somente um uso)\n\n---->")
                 
             if (escolha == "1"):
                 Player2.weapon_attack(Player1)
@@ -303,12 +303,12 @@ def main():
                 Player2.health_bar.draw()
                 time.sleep(2)
         else:  
-            escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+            escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n\n---->")
 
             while (escolha !="1" and escolha !="2"):
                 cabecalho("Opção não disponível")
                 time.sleep(1)
-                escolha = input("\n[1] Atacar\n[2]Vasculhar a floresta\n\n---->")
+                escolha = input("\n[1]Atacar\n[2]Vasculhar a floresta\n\n---->")
     
             if (escolha == "1"):
                 Player2.weapon_attack(Player1)
